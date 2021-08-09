@@ -36,3 +36,23 @@ function toggleTab(selectedNav, targetId) {
     }
   });
 }
+
+document.querySelector('.skip-button').addEventListener('click', (e)=>{
+  const skipMenu = document.querySelector('.skipMenu-menu');
+  skipMenu.classList.toggle('open');
+  const allLinks = skipMenu.querySelectorAll('a');
+  e.target.blur();
+
+  allLinks.forEach((item)=>{
+    if(skipMenu.classList.contains('open')) {
+      item.tabIndex = 0;
+    } else {
+      item.tabIndex = -1;
+    }
+  })
+});
+
+
+document.querySelector('.skipMenu-menu').addEventListener('click', (e)=>{
+  e.currentTarget.classList.toggle('open');
+});
