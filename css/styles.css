@@ -4,6 +4,61 @@
   background-size: cover;
 }
 
+.input.is-active,
+.input.is-focused,
+.input:active,
+.input:focus,
+.textarea.is-active,
+.textarea.is-focused,
+.textarea:active,
+.textarea:focus,
+.button.is-info.is-focused:not(:active),
+.button.is-info:focus:not(:active),
+.button:focus,
+.button:active,
+.button.is-link.is-focused:not(:active),
+.button.is-link:focus:not(:active),
+.button.is-focused:not(:active),
+.button:focus:not(:active),
+.button.is-primary.is-focused:not(:active),
+.button.is-primary:focus:not(:active),
+a.box:active, a.box:focus, a:focus, a:active{
+  outline: black;
+  box-shadow: 0 0 2px 2px #000, 0 0 3px 5px #fff;
+  border-color: #fff;
+}
+
+.input.is-success.is-active,
+.input.is-success.is-focused,
+.input.is-success:active,
+.input.is-success:focus,
+.textarea.is-success.is-active,
+.textarea.is-success.is-focused,
+.textarea.is-success:active,
+.textarea.is-success:focus {
+  box-shadow: 0 0 0 0.125em rgb(5 103 39);
+}
+
+.input.is-danger.is-active,
+.input.is-danger.is-focused,
+.input.is-danger:active,
+.input.is-danger:focus,
+.textarea.is-danger.is-active,
+.textarea.is-danger.is-focused,
+.textarea.is-danger:active,
+.textarea.is-danger:focus {
+  box-shadow: 0 0 0 0.125em rgb(212 10 51);
+}
+
+.select select.is-active,
+.select select.is-focused,
+.select select:active,
+.select select:focus {
+  border-color: #000;
+  box-shadow: 0 0 0 0.125em rgb(0 0 0);
+}
+
+
 .tabs {
   margin-bottom: -1px !important;
   position: relative;
@@ -40,6 +95,7 @@
   height: 0;
   overflow: hidden;
   max-width: 100%;
+  min-width: 260px;
 }
 .embed-container iframe,
 .embed-container object,
@@ -249,18 +305,7 @@ li {
   color: #ffffff;
 }
 
-.tabs li.is-active a,
-.tabs li.is-active .button{
-  color: #0b598c;
-}
-
-.tabs.is-boxed li.is-active .button {
-  background-color: #fff;
-  border-color: #dbdbdb;
-  border-bottom-color: transparent;
-}
-
-.tabs li.is-active .button {
+.tabs .button {
   border-bottom-color: #0b598c;
   color: #0b598c;
 }
@@ -272,31 +317,55 @@ li {
 
 .tabs .button {
   align-items: center;
-  border-bottom-color: #dbdbdb;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
   display: flex;
   justify-content: center;
   margin-bottom: -1px;
   padding: 1em 1em;
   vertical-align: top;
   font-size: 14px;
-
+  background-color: #0b598c;
   cursor: pointer;
   text-decoration: none;
-  background: none;
-  color: #ffffff;
 }
 
-.tabs .button .label {
+.tabs .button .label,
+.tabs .button {
   color: #ffffff;
   font-weight: 400;
 }
 
-.tabs li.is-active .button .label {
+.tabs .button.is-active .label,
+.tabs .button.is-active {
   color: #0b598c;
-  font-weight: 400;
 }
+
+.tabs .button.is-active {
+  background: #ffffff;
+  color: #0b598c;
+  outline: #ffffff;
+  box-shadow: none;
+}
+
+.tabs .button:focus {
+  border: none;
+  position: relative;
+}
+
+.tabs .button:focus {
+  box-shadow: none;
+}
+
+.tabs .button.is-active:focus:after {
+  content: " ";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  border: 3px solid #C74600;
+  border-radius: 3px;
+}
+
 
 .tabs .button:hover .label,
 .tabs .button:hover {
@@ -305,15 +374,12 @@ li {
   color: #0b598c;
 }
 
-.tabs ul {
+.tabs .tab-list {
   align-items: center;
-  border-bottom-color: #dbdbdb;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
   display: flex;
   flex-grow: 1;
   flex-shrink: 0;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .link:hover span,
@@ -404,60 +470,6 @@ footer .link:hover {
 
 .button.is-white.is-outlined:focus, .navbar-item.has-text-white:focus, .table-profile a:focus, .content a:focus, .button:focus {
   box-shadow: 0 0 2px 3px #000, 0 0 3px 5px #fff;
-}
-
-.input.is-active,
-.input.is-focused,
-.input:active,
-.input:focus,
-.textarea.is-active,
-.textarea.is-focused,
-.textarea:active,
-.textarea:focus,
-.button.is-info.is-focused:not(:active),
-.button.is-info:focus:not(:active),
-.button:focus,
-button:active,
-.button.is-link.is-focused:not(:active),
-.button.is-link:focus:not(:active),
-.button.is-focused:not(:active),
-.button:focus:not(:active),
-.button.is-primary.is-focused:not(:active),
-.button.is-primary:focus:not(:active),
-a.box:active, a.box:focus, a:focus, a:active{
-  outline: black;
-  box-shadow: 0 0 2px 2px #000, 0 0 3px 5px #fff;
-  border-color: #fff;
-}
-
-.input.is-success.is-active,
-.input.is-success.is-focused,
-.input.is-success:active,
-.input.is-success:focus,
-.textarea.is-success.is-active,
-.textarea.is-success.is-focused,
-.textarea.is-success:active,
-.textarea.is-success:focus {
-  box-shadow: 0 0 0 0.125em rgb(5 103 39);
-}
-
-.input.is-danger.is-active,
-.input.is-danger.is-focused,
-.input.is-danger:active,
-.input.is-danger:focus,
-.textarea.is-danger.is-active,
-.textarea.is-danger.is-focused,
-.textarea.is-danger:active,
-.textarea.is-danger:focus {
-  box-shadow: 0 0 0 0.125em rgb(212 10 51);
-}
-
-.select select.is-active,
-.select select.is-focused,
-.select select:active,
-.select select:focus {
-  border-color: #000;
-  box-shadow: 0 0 0 0.125em rgb(0 0 0);
 }
 
 .navigation .navigation-list {
