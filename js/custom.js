@@ -7,36 +7,6 @@
   });
 })();
 
-// document.querySelectorAll("#nav .button").forEach(function(navEl) {
-//   navEl.onclick = function() {
-//     toggleTab(this.id, this.dataset.target);
-//   };
-// });
-//
-// function toggleTab(selectedNav, targetId) {
-//   var navEls = document.querySelectorAll("#nav .button");
-//
-//   navEls.forEach(function(navEl) {
-//     if (navEl.id == selectedNav) {
-//       navEl.classList.add("is-active");
-//     } else {
-//       if (navEl.classList.contains("is-active")) {
-//         navEl.classList.remove("is-active");
-//       }
-//     }
-//   });
-//
-//   var tabs = document.querySelectorAll(".tab-pane");
-//
-//   tabs.forEach(function(tab) {
-//     if (tab.id == targetId) {
-//       tab.style.display = "block";
-//     } else {
-//       tab.style.display = "none";
-//     }
-//   });
-// }
-
 document.querySelector('.skip-button').addEventListener('click', (e)=>{
   const skipMenu = document.querySelector('.skipMenu-menu');
   skipMenu.classList.toggle('open');
@@ -187,3 +157,27 @@ document.querySelector('.skipMenu-menu').addEventListener('click', (e)=>{
     }
   }
 }());
+
+document.querySelectorAll('.modal-button').forEach(button => {
+   button.addEventListener('click', ({currentTarget})=> {
+     const modal = document.querySelector(`#${currentTarget.dataset.target} `);
+     modal.tabIndex = 0;
+     modal.focus();
+   })
+})
+
+document.querySelectorAll('.modal').forEach(card => {
+  card.addEventListener('keydown', ({currentTarget, key, target})=> {
+    if(key === 'Escape') {
+      const button = document.querySelector(`button[data-target="${currentTarget.id}"]`);
+      button.focus();
+    }
+  })
+
+  card.addEventListener('click', ({currentTarget, target})=> {
+    if(target.classList.contains('modal-close')) {
+      const button = document.querySelector(`button[data-target="${currentTarget.id}"]`);
+      button.focus();
+    }
+  })
+})

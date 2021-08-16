@@ -517,3 +517,11 @@ footer .link:hover {
 .skipMenu-menu.open {
   display: block;
 }
+
+.navbar-burger:hover {
+  border: 2px solid #fff;
+}
+
+.navbar-burger:hover span{
+  background-color: #ffffff;
+}
