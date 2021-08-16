@@ -525,3 +525,9 @@ footer .link:hover {
 .navbar-burger:hover span{
   background-color: #ffffff;
 }
+
+.alert {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+}

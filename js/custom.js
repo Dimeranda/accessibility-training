@@ -7,6 +7,19 @@
   });
 })();
 
+const message = document.querySelector('#title-message');
+let i = 1;
+const timerId = setInterval(function() {
+  message.textContent =
+    "You receive " + i +" message on forum";
+  i++;
+}, 4000);
+
+
+setTimeout(() =>{
+  clearInterval(timerId);
+}, 10000);
+
 document.querySelector('.skip-button').addEventListener('click', (e)=>{
   const skipMenu = document.querySelector('.skipMenu-menu');
   skipMenu.classList.toggle('open');
