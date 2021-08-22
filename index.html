@@ -76,13 +76,46 @@
                 <span>Home</span>
               </button>
             </li>
-            <li class="navbar-item">
-              <button class="button is-white is-outlined nav-button">
+            <li class="navbar-item with-navigation">
+              <button class="button is-white is-outlined nav-button"
+                      id="menubutton"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                      aria-controls="menu2">
                   <span aria-hidden="true" class="icon">
                     <i class="fab fa-superpowers"></i>
                   </span>
                 <span>Examples</span>
+                <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="menu-icon bi bi-triangle-fill" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M7.022 1.566a1.13 1.13 0 0 1 1.96 0l6.857 11.667c.457.778-.092 1.767-.98 1.767H1.144c-.889 0-1.437-.99-.98-1.767L7.022 1.566z"/>
+                </svg>
               </button>
+              <ul id="menu2"
+                  role="menu"
+                  aria-labelledby="menubutton">
+                <li role="none">
+                  <a role="menuitem" href="/Administration" tabindex="-1" >
+                    Administration
+                  </a>
+                </li>
+                <li role="none">
+                  <a role="menuitem" href="/TeamSettings" title="open in new tab" tabindex="-1" >Team Settings
+                  </a>
+                </li>
+                <li role="none">
+                  <a role="menuitem" href="/ManageYourTeam" tabindex="-1" >Manage Your Team
+                  </a>
+                </li>
+                <li role="none">
+                  <a role="menuitem" href="/Invitations" tabindex="-1" >Invitations
+                  </a>
+                </li>
+                <li role="separator"></li>
+                <li role="none">
+                  <a role="menuitem" href="/Authentication" tabindex="-1" >Authentication
+                  </a>
+                </li>
+              </ul>
             </li>
             <li class="navbar-item">
               <button class="button is-white is-outlined nav-button">
@@ -364,7 +397,7 @@
     <div class="tabs is-info is-boxed is-centered main-menu" id="nav">
       <div role="tablist" aria-label="Entertainment" class="tab-list">
           <button
-            class="button is-active"
+            class="button tab-button is-active"
             data-target="pane-1"
             id="1"
             role="tab"
@@ -374,7 +407,7 @@
               <span class="label">Pictures</span>
           </button>
         <button
-          class="button"
+          class="button tab-button"
           data-target="pane-3"
           id="3"
           role="tab"
@@ -384,7 +417,7 @@
             <span class="label">Team</span>
         </button>
         <button
-          class="button"
+          class="button tab-button"
           data-target="pane-4"
           id="4" role="tab"
           aria-selected="false"
@@ -1326,6 +1359,7 @@
       <p id="title-message">
         You receive one more message on forum
       </p>
+
     </div>
   </div>
 </main>

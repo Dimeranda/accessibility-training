@@ -45,7 +45,6 @@ document.querySelector('.skipMenu-menu').addEventListener('click', (e)=>{
 (function () {
   const tabs = document.querySelectorAll('[role="tab"]');
   const panels = document.querySelectorAll('[role="tabpanel"]')
-  const delay = 200;
 
   const keys = {
     end: 35,
@@ -82,11 +81,11 @@ document.querySelector('.skipMenu-menu').addEventListener('click', (e)=>{
     switch (key) {
       case keys.end:
         event.preventDefault();
-        activateTab(tabs[tabs.length - 1]);
+        tabs[tabs.length - 1].focus();
         break;
       case keys.home:
         event.preventDefault();
-        activateTab(tabs[0]);
+        tabs[0].focus()
         break;
     }
   }
@@ -157,17 +156,7 @@ document.querySelector('.skipMenu-menu').addEventListener('click', (e)=>{
   }
 
   function focusEventHandler (event) {
-    const target = event.target;
-
-    setTimeout(checkTabFocus, delay, target);
-  }
-
-  function checkTabFocus (target) {
-    let focused = document.activeElement;
-
-    if (target === focused) {
-      activateTab(target, false);
-    }
+    event.target.focus();
   }
 }());
 
@@ -177,7 +166,7 @@ document.querySelectorAll('.modal-button').forEach(button => {
      modal.tabIndex = 0;
      modal.focus();
    })
-})
+});
 
 document.querySelectorAll('.modal').forEach(card => {
   card.addEventListener('keydown', ({currentTarget, key, target})=> {
@@ -193,4 +182,84 @@ document.querySelectorAll('.modal').forEach(card => {
       button.focus();
     }
   })
-})
+});
+
+
+
+
+(function() {
+  const navElement = document.querySelector('.with-navigation');
+  const menubutton = document.querySelector('#menubutton');
+  const menuList = document.querySelector('#menu2');
+  const listMenuItems = Array.from(menuList.querySelectorAll('a'));
+  const nextNavigationButton = menubutton.parentElement.nextElementSibling.querySelector('button');
+  menubutton.addEventListener('click', openMenu);
+  document.addEventListener('click', handleOutSideClick)
+
+  function handleKeyboardNavigation (event) {
+    switch (event.key) {
+      case 'Home':
+        event.preventDefault();
+        listMenuItems[0].focus();
+        break;
+      case 'End':
+        event.preventDefault();
+        listMenuItems[listMenuItems.length - 1].focus();
+        break;
+      case 'Escape':
+        event.preventDefault();
+        closeMenu();
+        menubutton.focus();
+        break;
+      case 'Tab':
+        event.preventDefault();
+        closeMenu();
+        nextNavigationButton.focus();
+        break;
+      case 'ArrowUp':
+        event.preventDefault();
+        const indexUp = listMenuItems.indexOf(document.activeElement);
+        (indexUp === 0) ? listMenuItems[listMenuItems.length - 1].focus() : listMenuItems[indexUp - 1].focus();
+        break;
+      case 'ArrowDown':
+        event.preventDefault();
+        const indexDown = listMenuItems.indexOf(document.activeElement);
+        (indexDown + 1 === listMenuItems.length) ? listMenuItems[0].focus() : listMenuItems[indexDown + 1].focus();
+        break;
+    }
+
+    if(event.keyCode === 32) {
+      event.preventDefault();
+      window.location.href = document.activeElement.href;
+    }
+
+  }
+
+  function handleOutSideClick ({target}) {
+    if(!navElement.contains(target)) {
+      closeMenu();
+    }
+  }
+
+  function closeMenu() {
+    menubutton.setAttribute('aria-expanded', 'false');
+    menubutton.classList.remove('is-open');
+  }
+
+  function openMenu () {
+    menubutton.classList.toggle('is-open');
+
+    if (menubutton.classList.contains('is-open')) {
+      menubutton.setAttribute('aria-expanded', 'true');
+
+      listMenuItems[0].focus();
+      listMenuItems.forEach(item => {
+        item.addEventListener('keydown', handleKeyboardNavigation);
+      })
+
+    } else {
+      closeMenu();
+    }
+  }
+
+})();
