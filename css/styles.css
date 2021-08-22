@@ -355,7 +355,8 @@ li {
   box-shadow: none;
 }
 
-.tabs .button.is-active:focus:after {
+.tabs .button.is-active:focus:after,
+.tab-button:focus:after {
   content: " ";
   position: absolute;
   top: 2px;
@@ -530,4 +531,72 @@ footer .link:hover {
   position: fixed;
   right: 0;
   bottom: 0;
+}
+
+
+.with-navigation {
+  position: relative;
+}
+
+.with-navigation ul {
+  display: none;
+  position: absolute;
+  top: 55px;
+  width: 230px;
+  background: #33383e;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #fff;
+}
+
+.with-navigation button.is-open + ul {
+  display: block;
+}
+
+.with-navigation ul li {
+  padding: 10px 0;
+}
+
+.with-navigation ul li[role="separator"] {
+  border-bottom: 1px solid #ffffff;
+  padding: 5px 0;
+}
+
+.with-navigation ul a {
+  color: #fff;
+}
+
+.with-navigation ul a svg {
+  vertical-align: bottom;
+}
+
+.with-navigation ul a:hover {
+  text-decoration: underline;
+}
+
+
+svg.menu-icon {
+  transform: rotate(180deg) scale(0.7);
+  margin-left: 5px;
+}
+
+button:focus {
+  color: #33383e;
+  background: #ffffff;
+}
+
+button:hover svg.menu-icon {
+  color: #33383e;
+}
+
+button.is-open svg.menu-icon {
+  transform: rotate(0) scale(0.7);
+}
+
+
+.with-navigation .button.is-white.is-outlined.nav-button:focus,
+.with-navigation .button.is-link:focus,
+.with-navigation .button.is-white.is-outlined.nav-button:focus span {
+  color: #33383e;
+  background: #ffffff;
 }
