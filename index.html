@@ -13,7 +13,7 @@
 <body>
 <header class="hero hero-bg is-fullheight">
   <div id="skipToMenu" title="Skip To Keyboard Navigation" class="skipMenu">
-    <button href="#main" class="skip-button">Skip navigation</button>
+    <button href="#main" class="skip-button" aria-haspopup="true">Skip navigation</button>
 
     <ul id="menu1" class="skipMenu-menu" role="menu" aria-label="Skip To and Page Outline">
       <li role="separator">Skip To</li>
@@ -58,44 +58,44 @@
           <a class="navbar-item logo-link">
             <img src="https://www.epam.com/content/dam/epam/global/logo_white-blue.svg" alt="EPAM company logo">
           </a>
-          <button class="navbar-burger burger" data-target="navbarMenu" aria-label="navigation">
+          <button class="navbar-burger burger" data-target="navbarMenu" aria-owns="navbarMenu" aria-haspopup="true" id="burger-menu" aria-label="Main Menu">
             <span></span>
             <span></span>
             <span></span>
           </button>
         </div>
 
-        <nav id="navbarMenu" class="navbar-menu" aria-labelledby="mainNavigation">
+        <nav id="navbarMenu" class="navbar-menu">
           <h2 class="visuallyhidden" id="mainNavigation">Main Menu</h2>
           <ul class="navbar-end">
             <li class="navbar-item">
               <button class="button is-white is-outlined nav-button">
-                  <span class="icon">
-                    <span class="fa fa-home"></span>
+                  <span aria-hidden="true" class="icon">
+                    <i class="fa fa-home"></i>
                   </span>
                 <span>Home</span>
               </button>
             </li>
             <li class="navbar-item">
               <button class="button is-white is-outlined nav-button">
-                  <span class="icon">
-                    <span class="fab fa-superpowers"></span>
+                  <span aria-hidden="true" class="icon">
+                    <i class="fab fa-superpowers"></i>
                   </span>
                 <span>Examples</span>
               </button>
             </li>
             <li class="navbar-item">
               <button class="button is-white is-outlined nav-button">
-                  <span class="icon">
-                    <span class="fa fa-book"></span>
+                  <span aria-hidden="true" class="icon">
+                    <i class="fa fa-book"></i>
                   </span>
                 <span>Documentation</span>
               </button>
             </li>
             <li class="navbar-item">
               <button class="button is-white is-outlined nav-button">
-                  <span class="icon">
-                    <span class="fab fa-github"></span>
+                  <span aria-hidden="true" class="icon">
+                    <i class="fab fa-github"></i>
                   </span>
                 <span>View Source</span>
               </button>
@@ -294,11 +294,15 @@
             </div>
             <div class="card-content">
               <div class="content">
-                <div>Tristique senectus et netus et.</div>
+                <div id="learn-more-title-1">Tristique senectus et netus et.</div>
                 <p>Purus semper eget duis at tellus at urna condimentum mattis. Non blandit massa enim nec. Integer enim
                   neque volutpat ac tincidunt vitae semper quis. Accumsan tortor posuere ac ut consequat semper viverra
                   nam.</p>
-                <p><a href="https://exapmle.com" class="link">Learn more</a></p>
+                <p>
+                  <a href="/" aria-labelledby="learn-more-title-1 learn-more-link-1">
+                    <span id="learn-more-link-1">Learn more</span>
+                  </a>
+                </p>
               </div>
             </div>
           </div>
@@ -311,13 +315,15 @@
             </div>
             <div class="card-content">
               <div class="content">
-                <div>Tempor orci dapibus ultrices in.</div>
+                <div id="learn-more-title-2">Tempor orci dapibus ultrices in.</div>
                 <p>Ut venenatis tellus in metus vulputate. Amet consectetur adipiscing elit pellentesque. Sed arcu non
                   odio euismod lacinia at quis risus. Faucibus turpis in eu mi bibendum neque egestas cmonsu songue.
                   Phasellus vestibulum lorem
                   sed risus.
                 </p>
-                <p><a href="https://exapmle.com">Learn more</a></p>
+                <a href="/" aria-labelledby="learn-more-title-2 learn-more-link-2">
+                  <span id="learn-more-link-2">Learn more</span>
+                </a>
               </div>
             </div>
           </div>
@@ -330,11 +336,15 @@
             </div>
             <div class="card-content">
               <div class="content">
-                <div> Leo integer malesuada nunc vel risus.</div>
+                <div id="learn-more-title-3"> Leo integer malesuada nunc vel risus.</div>
                 <p>Imperdiet dui accumsan sit amet nulla facilisi morbi. Fusce ut placerat orci nulla pellentesque
                   dignissim enim. Libero id faucibus nisl tincidunt eget nullam. Commodo viverra maecenas accumsan lacus
                   vel facilisis.</p>
-                <p><a href="https://exapmle.com">Learn more</a></p>
+                <p>
+                  <a href="/" aria-labelledby="learn-more-title-3 learn-more-link-3">
+                    <span id="learn-more-link-3">Learn more</span>
+                  </a>
+                </p>
               </div>
             </div>
           </div>
@@ -360,7 +370,7 @@
             role="tab"
             aria-selected="true"
             aria-controls="pane-1">
-              <span class="icon is-small"><span class="fa fa-image"></span></span>
+              <span aria-hidden="true" class="icon is-small"><i class="fa fa-image"></i></span>
               <span class="label">Pictures</span>
           </button>
         <button
@@ -370,7 +380,7 @@
           role="tab"
           aria-selected="false"
           aria-controls="pane-3" tabindex="-1">
-            <span class="icon is-small"><span class="fab fa-superpowers"></span></span>
+            <span aria-hidden="true" class="icon is-small"><i class="fab fa-superpowers"></i></span>
             <span class="label">Team</span>
         </button>
         <button
@@ -380,7 +390,7 @@
           aria-selected="false"
           aria-controls="pane-4"
           tabindex="-1">
-            <span class="icon is-small"><span class="fa fa-film"></span></span>
+            <span aria-hidden="true" class="icon is-small"><i class="fa fa-film"></i></span>
             <span class="label">Video</span>
         </button>
       </div>
@@ -553,11 +563,13 @@
             <div class="image">
               <img src="./img/web-access-summit-eventbrite.jpg" alt="web accessibility summit">
             </div>
-            <h3 class="title">New York</h3>
+            <h3 class="title" id="buy-tickets-1">New York</h3>
             <p class="subtitle">Fri 27 Nov 2016</p>
-            <a href="https://example.com/" class="button external-link" target="_blank">
-              Buy Tickets
-              <span class="visuallyhidden"> opens in new window or tab</span>
+            <a href="https://example.com/"
+               class="button external-link" target="_blank"
+               aria-labelledby="buy-tickets-1 buy-tickets-text-1"
+               title="opens in new window or tab">
+              <span id="buy-tickets-text-1">Buy Tickets</span>
             </a>
           </div>
         </div>
@@ -566,11 +578,13 @@
             <div class="image">
               <img src="./img/access.jpg" alt="conference">
             </div>
-            <h3 class="title">Los Angeles</h3>
+            <h3 class="title" id="buy-tickets-2">Los Angeles</h3>
             <p class="subtitle">Fri 27 Nov 2016</p>
-            <a href="https://example.com/" class="button external-link" target="_blank">
-              Buy Tickets
-              <span class="visuallyhidden"> opens in new window or tab</span>
+            <a href="https://example.com/"
+               class="button external-link" target="_blank"
+               aria-labelledby="buy-tickets-2 buy-tickets-text-2"
+               title="opens in new window or tab">
+              <span id="buy-tickets-text-2">Buy Tickets</span>
             </a>
           </div>
         </div>
@@ -579,11 +593,13 @@
             <div class="image">
               <img src="./img/dotcss-2019.jpg" alt="dot conference">
             </div>
-            <h3 class="title">Mexico</h3>
+            <h3 class="title" id="buy-tickets-3">Mexico</h3>
             <p class="subtitle">Fri 27 Nov 2016</p>
-            <a href="https://example.com/" class="button external-link" target="_blank">
-              Buy Tickets
-              <span class="visuallyhidden"> opens in new window or tab</span>
+            <a href="https://example.com/"
+               class="button external-link" target="_blank"
+               aria-labelledby="buy-tickets-3 buy-tickets-text-3"
+               title="opens in new window or tab">
+              <span id="buy-tickets-text-3">Buy Tickets</span>
             </a>
           </div>
         </div>
@@ -595,11 +611,13 @@
             <div class="image">
               <img src="./img/images.jpg" alt="access a11y">
             </div>
-            <h3 class="title">Paris</h3>
+            <h3 class="title" id="buy-tickets-4">Paris</h3>
             <p class="subtitle">Fri 27 Nov 2016</p>
-            <a href="https://example.com/" class="button external-link" target="_blank">
-              Buy Tickets
-              <span class="visuallyhidden"> opens in new window or tab</span>
+            <a href="https://example.com/"
+               class="button external-link" target="_blank"
+               aria-labelledby="buy-tickets-4 buy-tickets-text-4"
+               title="opens in new window or tab">
+              <span id="buy-tickets-text-4">Buy Tickets</span>
             </a>
           </div>
         </div>
@@ -608,11 +626,13 @@
             <div class="image">
               <img src="./img/mid_300_33455472_313632022502906_5761920685983137792_n.png" alt="css minsk js">
             </div>
-            <h3 class="title">Minsk</h3>
+            <h3 class="title" id="buy-tickets-5">Minsk</h3>
             <p class="subtitle">Fri 27 Nov 2016</p>
-            <a href="https://example.com/" class="button external-link" target="_blank">
-              Buy Tickets
-              <span class="visuallyhidden"> opens in new window or tab</span>
+            <a href="https://example.com/"
+               class="button external-link" target="_blank"
+               aria-labelledby="buy-tickets-5 buy-tickets-text-5"
+               title="opens in new window or tab">
+              <span id="buy-tickets-text-5">Buy Tickets</span>
             </a>
           </div>
         </div>
@@ -621,14 +641,17 @@
             <div class="image">
               <img src="./img/access.jpg" alt="conference">
             </div>
-            <h3 class="title">London</h3>
+            <h3 class="title" id="buy-tickets-6">London</h3>
             <p class="subtitle">Fri 27 Nov 2016</p>
-            <a href="https://example.com/" class="button external-link" target="_blank">
-              Buy Tickets
-              <span class="visuallyhidden"> opens in new window or tab</span>
+            <a href="https://example.com/"
+               class="button external-link" target="_blank"
+               aria-labelledby="buy-tickets-6 buy-tickets-text-6"
+               title="opens in new window or tab">
+              <span id="buy-tickets-text-6">Buy Tickets</span>
             </a>
           </div>
         </div>
+        <span class="visuallyhidden" id="new-tab"> opens in new window or tab</span>
       </div>
     </div>
   </section>
@@ -693,7 +716,7 @@
             <div class="card">
               <div class="card-header">
                 <p class="card-header-title">
-                  <span>Admin <small>(Light)</small></span>
+                  <span id="preview-1">Admin <small>(Light)</small></span>
                   <span class="is-pulled-right">
                      <a href="https://example.com" target="_blank" class="link">
                         <span class="tag is-default external-link">v.0.7.2</span>
@@ -710,7 +733,7 @@
                 </div>
               </div>
               <div class="card-footer">
-                <a href="https://example.com" class="card-footer-item link-dark">
+                <a href="https://example.com" class="card-footer-item link-dark" aria-owns="preview-1 new-tab">
                   <svg class="external-svg" width="24" height="24" xmlns="http://www.w3.org/2000/svg"
                        fill="currentColor" clip-rule="evenodd">
                     <path
@@ -718,7 +741,7 @@
                   </svg>
                   Preview
                 </a>
-                <a href="https://example.com" class="card-footer-item link-dark">
+                <a href="https://example.com" class="card-footer-item link-dark" aria-owns="preview-1 new-tab">
                   <svg class="external-svg" width="24" height="24" xmlns="http://www.w3.org/2000/svg"
                        fill="currentColor" clip-rule="evenodd">
                     <path
@@ -733,7 +756,7 @@
             <div class="card">
               <div class="card-header">
                 <p class="card-header-title">
-                  <span>Cards</span>
+                  <span id="preview-2">Cards</span>
                   <span class="is-pulled-right">
                     <a href="https://example.com" target="_blank" class="link">
                       <span class="tag is-default external-link">v0.7.2</span>
@@ -750,7 +773,7 @@
                 </div>
               </div>
               <div class="card-footer">
-                <a href="https://example.com" class="card-footer-item link-dark">
+                <a href="https://example.com" class="card-footer-item link-dark" aria-owns="preview-2 new-tab">
                   <svg class="external-svg" width="24" height="24" xmlns="http://www.w3.org/2000/svg"
                        fill="currentColor" clip-rule="evenodd">
                     <path
@@ -758,7 +781,7 @@
                   </svg>
                   Preview
                 </a>
-                <a href="https://example.com" class="card-footer-item link-dark">
+                <a href="https://example.com" class="card-footer-item link-dark" aria-owns="preview-2 new-tab">
                   <svg class="external-svg" width="24" height="24" xmlns="http://www.w3.org/2000/svg"
                        fill="currentColor" clip-rule="evenodd">
                     <path
@@ -773,7 +796,7 @@
             <div class="card">
               <div class="card-header">
                 <p class="card-header-title">
-                  <span>Forum</span>
+                  <span id="preview-3">Forum</span>
                   <span class="is-pulled-right">
                     <a href="https://example.com" target="_blank" class="link">
                       <span class="tag is-default external-link">v0.7.2</span>
@@ -790,7 +813,7 @@
                 </div>
               </div>
               <div class="card-footer">
-                <a href="https://example.com" class="card-footer-item link-dark">
+                <a href="https://example.com" class="card-footer-item link-dark" aria-owns="preview-3 new-tab">
                   <svg class="external-svg" width="24" height="24" xmlns="http://www.w3.org/2000/svg"
                        fill="currentColor" clip-rule="evenodd">
                     <path
@@ -798,7 +821,7 @@
                   </svg>
                   Preview
                 </a>
-                <a href="https://example.com" class="card-footer-item link-dark">
+                <a href="https://example.com" class="card-footer-item link-dark" aria-owns="preview-3 new-tab">
                   <svg class="external-svg" width="24" height="24" xmlns="http://www.w3.org/2000/svg"
                        fill="currentColor" clip-rule="evenodd">
                     <path
@@ -815,7 +838,7 @@
             <div class="card">
               <div class="card-header">
                 <p class="card-header-title">
-                  <span>InstaAlbum</span>
+                  <span id="preview-4">InstaAlbum</span>
                   <span class="is-pulled-right">
                     <a href="https://example.com" target="_blank" class="link">
                       <span class="tag is-default external-link">v0.7.2</span>
@@ -832,7 +855,7 @@
                 </div>
               </div>
               <div class="card-footer">
-                <a href="https://example.com" class="card-footer-item link-dark">
+                <a href="https://example.com" class="card-footer-item link-dark" aria-owns="preview-4 new-tab">
                   <svg class="external-svg" width="24" height="24" xmlns="http://www.w3.org/2000/svg"
                        fill="currentColor" clip-rule="evenodd">
                     <path
@@ -840,7 +863,7 @@
                   </svg>
                   Preview
                 </a>
-                <a href="https://example.com" class="card-footer-item link-dark">
+                <a href="https://example.com" class="card-footer-item link-dark" aria-owns="preview-4 new-tab">
                   <svg class="external-svg" width="24" height="24" xmlns="http://www.w3.org/2000/svg"
                        fill="currentColor" clip-rule="evenodd">
                     <path
@@ -855,7 +878,7 @@
             <div class="card">
               <div class="card-header">
                 <p class="card-header-title">
-                  <span>Landing</span>
+                  <span id="preview-5">Landing</span>
                   <span class="is-pulled-right">
                     <a href="https://example.com" target="_blank" class="link">
                       <span class="tag is-default external-link">v0.7.2</span>
@@ -872,7 +895,7 @@
                 </div>
               </div>
               <div class="card-footer">
-                <a href="https://example.com" class="card-footer-item link-dark">
+                <a href="https://example.com" class="card-footer-item link-dark" aria-owns="preview-5 new-tab">
                   <svg class="external-svg" width="24" height="24" xmlns="http://www.w3.org/2000/svg"
                        fill="currentColor" clip-rule="evenodd">
                     <path
@@ -880,7 +903,7 @@
                   </svg>
                   Preview
                 </a>
-                <a href="https://example.com" class="card-footer-item link-dark">
+                <a href="https://example.com" class="card-footer-item link-dark"  aria-owns="preview-5 new-tab">
                   <svg class="external-svg" width="24" height="24" xmlns="http://www.w3.org/2000/svg"
                        fill="currentColor" clip-rule="evenodd">
                     <path
@@ -895,7 +918,7 @@
             <div class="card">
               <div class="card-header">
                 <p class="card-header-title">
-                  <span>Marketing</span>
+                  <span id="preview-6">Marketing</span>
                   <span class="is-pulled-right">
                     <a href="https://example.com" target="_blank" class="link">
                       <span class="tag is-default external-link">v0.7.2</span>
@@ -912,7 +935,7 @@
                 </div>
               </div>
               <div class="card-footer">
-                <a href="https://example.com" class="card-footer-item link-dark">
+                <a href="https://example.com" class="card-footer-item link-dark" aria-owns="preview-6 new-tab">
                   <svg class="external-svg" width="24" height="24" xmlns="http://www.w3.org/2000/svg"
                        fill="currentColor" clip-rule="evenodd">
                     <path
@@ -920,7 +943,7 @@
                   </svg>
                   Preview
                 </a>
-                <a href="https://example.com" class="card-footer-item link-dark">
+                <a href="https://example.com" class="card-footer-item link-dark" aria-owns="preview-6 new-tab">
                   <svg class="external-svg" width="24" height="24" xmlns="http://www.w3.org/2000/svg"
                        fill="currentColor" clip-rule="evenodd">
                     <path
@@ -1109,19 +1132,19 @@
         <div class="field">
           <label class="label" for="name">Name</label>
           <div class="control">
-            <input class="input" type="text" placeholder="Text input" id="name">
+            <input class="input" type="text" placeholder="Enter Name" id="name">
           </div>
         </div>
 
         <div class="field">
           <label class="label" for="username">Username</label>
           <div class="control has-icons-left has-icons-right">
-            <input class="input is-success" type="text" id="username">
-            <span class="icon is-small is-left">
-              <span class="fas fa-user"></span>
+            <input class="input is-success" type="text" id="username" placeholder="Enter UserName">
+            <span aria-hidden="true" class="icon is-small is-left">
+              <i class="fas fa-user"></i>
             </span>
-            <span class="icon is-small is-right">
-              <span class="fas fa-check"></span>
+            <span aria-hidden="true" class="icon is-small is-right">
+              <i class="fas fa-check"></i>
             </span>
           </div>
           <p class="help is-success">This username is available</p>
@@ -1130,12 +1153,12 @@
         <div class="field">
           <label class="label" for="email">Email</label>
           <div class="control has-icons-left has-icons-right">
-            <input class="input is-danger" type="email" placeholder="Email input" value="hello@" id="email">
-            <span class="icon is-small is-left">
-              <span class="fas fa-envelope"></span>
+            <input class="input is-danger" type="email" placeholder="Enter Email" value="hello@" id="email">
+            <span aria-hidden="true" class="icon is-small is-left">
+              <i class="fas fa-envelope"></i>
             </span>
-            <span class="icon is-small is-right">
-              <span class="fas fa-exclamation-triangle"></span>
+            <span aria-hidden="true" class="icon is-small is-right">
+              <i class="fas fa-exclamation-triangle"></i>
             </span>
           </div>
           <p class="help is-danger">This email is invalid</p>
@@ -1145,8 +1168,8 @@
           <label class="label" for="select">Subject</label>
           <div class="control">
             <div class="select">
-              <select id="select">
-                <option>Select dropdown</option>
+              <select id="select" >
+                <option>Select your oprion</option>
                 <option>With options</option>
               </select>
             </div>
@@ -1156,7 +1179,7 @@
         <div class="field">
           <label class="label" for="textarea">Message</label>
           <div class="control">
-            <textarea class="textarea" placeholder="Textarea" id="textarea"></textarea>
+            <textarea class="textarea" placeholder="Enter your message" id="textarea"></textarea>
           </div>
         </div>
 
@@ -1190,13 +1213,13 @@
     </div>
   </section>
 
-  <!-- <div class="section">
+  <div class="section">
 		<div class="container">
 			<div class="columns is-multiline">
 				<div class="column is-one-third">
 					<div class="notification media has-background-white">
 						<div class="media-left">
-							<span class="icon">
+							<span aria-hidden="true" class="icon">
 								<i class="has-text-warning fas fa-columns fa-lg"></i>
 							</span>
 						</div>
@@ -1213,7 +1236,7 @@
 				<div class="column is-one-third">
 					<div class="notification has-background-white media">
 						<div class="media-left">
-							<span class="icon has-text-info">
+							<span aria-hidden="true" class="icon has-text-info">
 								<i class="fab fa-lg fa-wpforms"></i>
 							</span>
 						</div>
@@ -1230,7 +1253,7 @@
 				<div class="column is-one-third">
 					<div class="notification has-background-white media">
 						<div class="media-left">
-							<span class="icon has-text-danger">
+							<span aria-hidden="true" class="icon has-text-danger">
 								<i class="fas fa-lg fa-cubes"></i>
 							</span>
 						</div>
@@ -1247,7 +1270,7 @@
 				<div class="column is-one-third">
 					<div class="notification has-background-white media">
 						<div class="media-left">
-							<span class="icon has-text-grey-dark">
+							<span aria-hidden="true" class="icon has-text-grey-dark">
 								<i class="fas fa-lg fa-cogs"></i>
 							</span>
 						</div>
@@ -1264,7 +1287,7 @@
 				<div class="column is-one-third">
 					<div class="notification has-background-white media">
 						<div class="media-left">
-							<span class="icon has-text-primary">
+							<span aria-hidden="true" class="icon has-text-primary">
 								<i class="fas fa-lg fa-warehouse"></i>
 							</span>
 						</div>
@@ -1281,7 +1304,7 @@
 				<div class="column is-one-third">
 					<div class="notification has-background-white media">
 						<div class="media-left">
-							<span class="icon has-text-danger">
+							<span aria-hidden="true" class="icon has-text-danger">
 								<i class="fas fa-lg fa-cube"></i>
 							</span>
 						</div>
@@ -1297,8 +1320,14 @@
 				</div>
 			</div>
 		</div>
-	</div> -->
-
+	</div>
+  <div class="column message-popup alert"  id="new-message" aria-live="polite" aria-atomic="true" >
+    <div class="box">
+      <p id="title-message">
+        You receive one more message on forum
+      </p>
+    </div>
+  </div>
 </main>
 
 <footer class="footer">
@@ -1362,59 +1391,62 @@
   </div>
 </footer>
 
-<!--  <div id="modal-card" class="modal modal-fx-3dSlit">-->
-<!--    <div class="modal-background"></div>-->
-<!--    <div class="modal-content is-tiny">-->
-<!--      <div class="card">-->
-<!--        <div class="card-image">-->
-<!--          <div class="image is-4by3">-->
-<!--            <img src="https://source.unsplash.com/random/?sig=2">-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <div class="card-content">-->
-<!--          <div class="media">-->
-<!--            <div class="media-left">-->
-<!--              <div class="image is-48x48">-->
-<!--                <img src="http://www.radfaces.com/images/avatars/linda-barret.jpg">-->
-<!--              </div>-->
-<!--            </div>-->
-<!--            <div class="media-content">-->
-<!--              <div class="title is-4">Jane Doe</div>-->
-<!--              <div class="subtitle is-6">@jane_doe</div>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--          <div class="content">-->
-<!--            Laum Ipsum junkah potatoes bookin' it. Moosetown rig up I'm tellin' you way up north bookin' it can't get theyah from heeyah native bean suppah whawf Powrtland Museum of Aht, back woods hawsun around the pit mummah Yessah, mummah muckle riyht on'ta her-->
-<!--            Bean's dinnahbucket bub geez bud sumpin' fierce ayuhpawt Bangah naw, Powrtland Museum of Aht down cellah sumpin' fierce hoppa bub If you can't stand the wintah you don't deserve the summah slower than molasses going uphill in January.-->
-<!--            Sgn'wahl shoggor hrii uaaah R'lyeh uh'e k'yarnak Hastur hupadgh li'hee, hai f'nilgh'ri nilgh'ri n'ghftor ngftaghu vulgtlagln h'hrii throd Nyarlathotep lloig, naflsll'ha nnnsll'ha athg y-ebunma goka chtenff ehyeog cehye. Zhro y'hah-->
-<!--            nogoth phlegeth stell'bsna orr'e ph'Hastur gnaiih throd, uln ya lw'nafh mg nar'luh li'hee wgah'n, sgn'wahl mg nakadishtu chlirgh hupadgh tharanak h'gnaiih.-->
-<!--            <a href="https://example.com">@testio</a>.-->
-<!--            <a href="https://example.com">#css</a>-->
-<!--            <a href="https://example.com">#responsive</a>-->
-<!--            <br>-->
-<!--            <time datetime="2018-02-02">12:45 AM - 20 June 2018</time>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <button class="modal-close is-large"></button>-->
-<!--  </div>-->
+  <div id="modal-card" class="modal modal-fx-3dSlit" role="dialog" aria-labelledby="modal-card-1-label" aria-modal="true">
+    <h3 id="modal-card-1-label" class="visuallyhidden">Jane Doe Article picture</h3>
+    <div class="modal-background"></div>
+    <div class="modal-content is-tiny">
+      <div class="card">
+        <div class="card-image">
+          <div class="image is-4by3">
+            <img src="https://source.unsplash.com/random/?sig=2">
+          </div>
+        </div>
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <div class="image is-48x48">
+                <img src="http://www.radfaces.com/images/avatars/linda-barret.jpg">
+              </div>
+            </div>
+            <div class="media-content">
+              <div class="title is-4">Jane Doe</div>
+              <div class="subtitle is-6">@jane_doe</div>
+            </div>
+          </div>
+          <div class="content">
+            Laum Ipsum junkah potatoes bookin' it. Moosetown rig up I'm tellin' you way up north bookin' it can't get theyah from heeyah native bean suppah whawf Powrtland Museum of Aht, back woods hawsun around the pit mummah Yessah, mummah muckle riyht on'ta her
+            Bean's dinnahbucket bub geez bud sumpin' fierce ayuhpawt Bangah naw, Powrtland Museum of Aht down cellah sumpin' fierce hoppa bub If you can't stand the wintah you don't deserve the summah slower than molasses going uphill in January.
+            Sgn'wahl shoggor hrii uaaah R'lyeh uh'e k'yarnak Hastur hupadgh li'hee, hai f'nilgh'ri nilgh'ri n'ghftor ngftaghu vulgtlagln h'hrii throd Nyarlathotep lloig, naflsll'ha nnnsll'ha athg y-ebunma goka chtenff ehyeog cehye. Zhro y'hah
+            nogoth phlegeth stell'bsna orr'e ph'Hastur gnaiih throd, uln ya lw'nafh mg nar'luh li'hee wgah'n, sgn'wahl mg nakadishtu chlirgh hupadgh tharanak h'gnaiih.
+            <a href="https://example.com">@testio</a>.
+            <a href="https://example.com">#css</a>
+            <a href="https://example.com">#responsive</a>
+            <br>
+            <time datetime="2018-02-02">12:45 AM - 20 June 2018</time>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="modal-close is-large"></button>
+  </div>
 
-<!--  <div id="modal-image1" class="modal modal-fx-3dSlit">-->
-<!--    <div class="modal-background"></div>-->
-<!--    <div class="modal-content is-huge is-image">-->
-<!--      <img src="https://source.unsplash.com/random/?sig=1">-->
-<!--    </div>-->
-<!--    <button class="modal-close is-large"></button>-->
-<!--  </div>-->
+  <div id="modal-image1" class="modal modal-fx-3dSlit" role="dialog" aria-labelledby="modal-image1-label" aria-modal="true">
+      <h3 class="visuallyhidden" id="modal-image1-label">Beautiful winter picture</h3>
+    <div class="modal-background"></div>
+    <div class="modal-content is-huge is-image">
+      <img src="https://source.unsplash.com/random/?sig=1">
+    </div>
+    <button class="modal-close is-large"></button>
+  </div>
 
-<!--  <div id="modal-image2" class="modal modal-fx-superScaled">-->
-<!--    <div class="modal-background"></div>-->
-<!--    <div class="modal-content  is-image">-->
-<!--      <img src="https://source.unsplash.com/random/?sig=3">-->
-<!--    </div>-->
-<!--    <button class="modal-close is-large"></button>-->
-<!--  </div>-->
+<div id="modal-image2" class="modal modal-fx-superScaled" role="dialog" aria-labelledby="modal-image2-label" aria-modal="true">
+  <h3 class="visuallyhidden" id="modal-image2-label">Beautiful picture</h3>
+    <div class="modal-background"></div>
+    <div class="modal-content  is-image">
+      <img src="https://source.unsplash.com/random/?sig=3">
+    </div>
+    <button class="modal-close is-large"></button>
+  </div>
 
 <script src="https://unpkg.com/bulma-modal-fx/dist/js/modal-fx.min.js"></script>
 <script async src="js/custom.js"></script>
